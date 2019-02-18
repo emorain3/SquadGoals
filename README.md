@@ -3,5 +3,5 @@ App for collaborative task and goal creation
 
 
 ### Similar Products/ References/ Inspiration: 
-- Trello: 
+- Trello: https://trello.com/
 - Asana: https://asana.com/
