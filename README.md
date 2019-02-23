@@ -5,7 +5,7 @@ App for collaborative task and goal creation
 ### Installing
  - Web app accessible here! 
 
-## Technologies Used
+### Technologies Used
 - [Vectr](http://vectr.com) - for wireframing and pre-planning.
 - [Trello](https://trello.com/b/rl9a7dbe/shopping-website-wdi-project-3) For Project Management
 - [Django](https://www.djangoproject.com/) - Route handling, project framework, server and package management.
@@ -14,11 +14,11 @@ App for collaborative task and goal creation
 - [Heroku](http://heroku.com) for deployment
 - [Bulma](https://bulma.io/) for styling 
 
-## Authors
+### Authors
 
 * **Ecclesia Morain** 
 
-## Acknowledgments
+### Acknowledgments
 Shout outs to my favorite Deisgners. You guys always offer the greatest feedback!
 * [Karelys](https://github.com/karelyssouto)
 * [Shalain](https://github.com/shalaind)
