@@ -7,7 +7,7 @@ App for collaborative task and goal creation
 
 ### Technologies Used
 - [Vectr](http://vectr.com) - for wireframing and pre-planning.
-- [Trello](https://trello.com/b/rl9a7dbe/shopping-website-wdi-project-3) For Project Management
+- [Trello](https://trello.com/b/4UXOAV53/squadgoalsapp) For Project Management
 - [Django](https://www.djangoproject.com/) - Route handling, project framework, server and package management.
 - [Mongoose and MongoDB](https://mongoosejs.com/) - Database management
 - [React.js](https://reactjs.org/) - Client/ Front-end management.
