@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import AppUser
+
 
 
 # Create your views here.
-def renderHomepage(req):
-    return HttpResponse('Cute.')
+def index(req):
+    users = AppUser.objects.all()[0]
+    return HttpResponse('users: ' + users.name)
