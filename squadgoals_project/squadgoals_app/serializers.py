@@ -4,6 +4,7 @@ from  .models import *
 
 
 class AppUserSerializer(serializers.ModelSerializer):
+    # goals = GoalSerializer(many=True, read_only=True)
     class Meta:
         model = AppUser
         fields = '__all__'

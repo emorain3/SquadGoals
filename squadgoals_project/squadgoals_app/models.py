@@ -11,6 +11,7 @@ class AppUser(models.Model):
     def __str__(self):
         # This makes the name of an instance show up as the actual name instead of the name of the model + "(#)"
         return self.name 
+    objects = models.Manager()
 
 class Goal(models.Model):
     title = models.CharField(max_length=100)
@@ -18,6 +19,7 @@ class Goal(models.Model):
     collaborators = models.ManyToManyField(AppUser)
     def __str__(self):
         return self.title 
+    objects = models.Manager()
 
 
 class Subgoal(models.Model):
@@ -26,5 +28,6 @@ class Subgoal(models.Model):
     collaborators = models.ManyToManyField(AppUser)
     associatedGoal = models.ForeignKey(Goal, on_delete=models.CASCADE)
     isComplete = models.BooleanField(default=False)
+    objects = models.Manager()
     def __str__(self):
         return self.title 
