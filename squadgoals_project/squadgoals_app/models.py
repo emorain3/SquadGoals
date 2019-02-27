@@ -16,10 +16,14 @@ class AppUser(models.Model):
 class Goal(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=300)
-    collaborators = models.ManyToManyField(AppUser)
+    collaborators = models.ManyToManyField(AppUser, related_name="collaborators")
+    
+    objects = models.Manager()
+    
     def __str__(self):
         return self.title 
-    objects = models.Manager()
+
+
 
 
 class Subgoal(models.Model):
@@ -28,6 +32,8 @@ class Subgoal(models.Model):
     collaborators = models.ManyToManyField(AppUser)
     associatedGoal = models.ForeignKey(Goal, on_delete=models.CASCADE)
     isComplete = models.BooleanField(default=False)
+    
     objects = models.Manager()
+    
     def __str__(self):
         return self.title 
