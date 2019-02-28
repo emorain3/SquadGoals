@@ -21,13 +21,13 @@ App for collaborative task and goal creation
 * **Ecclesia Morain** 
 
 ### Wireframes
-![Web](/images/wireframe1.jpg)
-![Web continued](/images/wireframe2.jpg)
-![Mobile](/images/wireframe3.jpg)
+![Web](images/wireframe1.jpg)
+![Web continued](images/wireframe2.jpg)
+![Mobile](images/wireframe3.jpg)
 
 
 ### Entity Relationship Diagram 
-![ERD](/images/ERD.png)
+![ERD](images/ERD.png)
 
 
 ### Acknowledgments
