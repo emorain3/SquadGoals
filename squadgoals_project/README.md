@@ -22,9 +22,9 @@ App for collaborative task and goal creation
 
 ### Wireframes
 
-![Web](/images/wireframe1.jpg)
+![Web](images/wireframe1.jpg)
 ![Web continued](images/wireframe2.jpg)
-![Mobile](/images/wireframe3.jpg)
+![Mobile](images/wireframe3.jpg)
 
 
 ### Entity Relationship Diagram 
