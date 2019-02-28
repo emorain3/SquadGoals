@@ -5,26 +5,44 @@ const Goal = require('../models/Goal');
 const goalController = {
     show: (req, res) => {
         let id = req.params.id;
-        User.findById(id).populate('goals').then( user => {
-            // console.log(User)
-            res.render('shop/showUser', {user})
+        
+        Goal.findById(id).then( goal => {
+            console.log(goal)
+            res.send(goal)
         })
+        // Goal.findById(id).populate('goals').then( goal => {
+        //     // console.log(goal)
+        //     res.send(goal)
+        // })
     
     },
     create: (req, res) => {
-        let userId = req.params.id;
-        console.log("\n \n req.body looks like: \n" + req.body + "\n")
-        User.findById(userId).then( user => {
-            Goal.create({
-                author: "Anon", 
-                message: req.body.message, 
-            }).then( newgoal => {
-                user.goals.push(newgoal)
-                user.save()
-                res.redirect('/user/' + userId)
-            })
+        Goal.create({
+            title: req.body.title,
+            description: req.body.description,
+            image_url: req.body.image_url, 
+            collaborators: req.body.collaborators,
+            subgoals: req.body.subgoals,
+        }).then(() => Goal.find({}).then(goals => {
+            console.log("These are the goals in my database: " + goals)
+            res.send(goals);
+        }))
+    },
+
+    update: (req, res) => {
+        let id = req.params.id;
+        console.log("Editing: " + id);
+        Goal.findByIdAndUpdate(id, req.body, {new: true}).then(goal => res.send(goal))
+    },
+
+    delete: (req, res) => {
+        let id = req.params.id;
+        // console.log("Deleting: " + id);
+        Goal.findByIdAndDelete(id).then(goal => {
+            console.log("HEY YOU! goal found: " + goal)
+            res.send(goal)
         })
-    }
+    },
 }
 
 module.exports = goalController

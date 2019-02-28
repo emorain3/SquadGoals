@@ -10,15 +10,11 @@ const Subgoal = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Goal'
     },
-    
+
     collaborators: [{
         type: Schema.Types.ObjectId,
         ref: 'User'
     }],
-    reviews: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Subgoals'
-    }]
 })
 
 
