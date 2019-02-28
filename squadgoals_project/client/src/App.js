@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css';
-import styled from 'styled-components';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+// import styled from 'styled-components';
 
-
+import HomePage from './components/Homepaage'
 
 
 
@@ -12,6 +12,7 @@ class App extends Component {
     return (
       <div>
         <h1> Here's a front end...</h1>
+        <HomePage/>
         {/* <Router>
           <Switch>
             <Route exact path="/" component={LocationImagesContainer} />
