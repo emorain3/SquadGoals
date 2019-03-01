@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import AppBanner from './AppBanner'
 import Navbar from './Navbar'
 import Card from './Card';
-
+import GoalForm from './GoalForm'
 
 
 
@@ -16,6 +16,7 @@ let PageContainer = styled.div`
 
     display: flex;
     justify-content: center;
+    align-items: space-evenly;
 
     margin-top: 5vw;
 `
@@ -81,9 +82,9 @@ class Homepage extends Component {
                             />
                             )
                         })}
-                <i style={{marginLeft: "-15vw", marginTop: "4vw"}} class="fas fa-plus-circle fa-7x"></i>
+                {/* <i style={{marginLeft: "-15vw", marginTop: "4vw"}} class="fas fa-plus-circle fa-7x"></i> */}
                 </PageContainer>
-
+                <GoalForm/>
             </div>
         );
     }
