@@ -40,6 +40,7 @@ class GoalForm extends Component {
         axios.post('/api/goal', { title, description, image_url  } )
           .then((result) => {
             console.log("successful delivery!")
+            this.props.showGoals()
           });
       }
 

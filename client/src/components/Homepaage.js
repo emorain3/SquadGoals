@@ -17,6 +17,7 @@ let PageContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: space-evenly;
+    flex-wrap: wrap;
 
     margin-top: 5vw;
 `
@@ -79,12 +80,14 @@ class Homepage extends Component {
                             <Card
                             title={goal.title}
                             description={goal.description}
+                            id={goal._id}
+                            showGoals={this.showGoals}
                             />
                             )
                         })}
                 {/* <i style={{marginLeft: "-15vw", marginTop: "4vw"}} class="fas fa-plus-circle fa-7x"></i> */}
                 </PageContainer>
-                <GoalForm/>
+                <GoalForm showGoals={this.showGoals}/>
             </div>
         );
     }

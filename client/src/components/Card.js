@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
+import axios from 'axios';
+
 
 
 let CardStyled = styled.section`
@@ -22,6 +24,17 @@ let ZeroMargin = styled.div`
 `
 
 class Card extends Component {
+    
+    deleteGoal = (id) => {
+        console.log("deleteGoal() on" + id + "called")
+        axios.delete(`/api/goal/${id}`).then((res) => {
+            console.log("Deleted...? --> " + JSON.stringify(res.data))
+            this.props.showGoals()
+        })
+        
+    }
+
+
     render() {
         return (
             <div>
@@ -33,15 +46,15 @@ class Card extends Component {
                             <p className="subtitle"> {this.props.description} </p>
                            
                             {/*  Edit Buttons */}
-                            {/* <EditButtonsContainer class="edit_button_container" visibility={this.state.visibility} >
-                                        <Link to={`/goal/${_id}`}>
-                                            <i style={{color:"grey", marginLeft:"6vw", marginBottom:"0vw"}} class="fas fa-edit fa-2x"></i>
-                                        </Link>
-                                        <Link to={`/goal/${_id}`}> 
-                                            <i style={{color:"grey", marginLeft:"2vw", marginBottom:"0vw"}} class="fas fa-trash-alt fa-2x"></i>
-                                        </Link> 
+                            <EditButtonsContainer class="edit_button_container" >
+                                <Link to={'/'} >
+                                    <i style={{color:"grey", marginLeft:"6vw", marginBottom:"0vw"}} class="fas fa-edit fa-2x"></i>
+                                </Link>
+                                <Link to={'/'} onClick={() => this.deleteGoal(this.props.id)} > 
+                                    <i style={{color:"grey", marginLeft:"2vw", marginBottom:"0vw"}} class="fas fa-trash-alt fa-2x"></i>
+                                </Link> 
                                         
-                            </EditButtonsContainer> */}
+                            </EditButtonsContainer>
                         </ZeroMargin>
                         
                     </CardStyled>
