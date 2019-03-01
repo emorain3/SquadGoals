@@ -19,27 +19,28 @@ let NavText = styled.p`
 class Navbar extends Component {
     render() {
         return (
-            <TransparentNav class="navbar is-transparent">
+            <div> </div>
+            // <TransparentNav class="navbar is-transparent">
                 
 
-                <div id="navbarExampleTransparentExample" class="navbar-menu">
-                    <div class="navbar-end">
-                        <Link class="navbar-item" to="https://bulma.io/">
-                            <NavText>
-                                Profile
-                            </NavText>
-                        </Link>
+            //     <div id="navbarExampleTransparentExample" class="navbar-menu">
+            //         <div class="navbar-end">
+            //             <Link class="navbar-item" to="https://bulma.io/">
+            //                 <NavText>
+            //                     Profile
+            //                 </NavText>
+            //             </Link>
 
-                        <Link class="navbar-item" to="https://bulma.io/">
-                            <NavText>
-                                Calendar
-                            </NavText>
-                        </Link>
+            //             <Link class="navbar-item" to="https://bulma.io/">
+            //                 <NavText>
+            //                     Calendar
+            //                 </NavText>
+            //             </Link>
                    
-                    </div>
+            //         </div>
 
-                </div>
-            </TransparentNav>
+            //     </div>
+            // </TransparentNav>
         );
     }
 }

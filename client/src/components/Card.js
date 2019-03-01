@@ -14,14 +14,14 @@ class Card extends Component {
         return (
             <div>
                 <div className="tile is-ancestor">
-                    <Card className="tile is-4 is-parent">
+                    <CardStyled className="tile is-4 is-parent">
                         
                         <div className="tile is-child box">
                             <p className="title">One</p>
                             <p className="subtitle">Subtitle</p>
                         </div>
                         
-                    </Card>
+                    </CardStyled>
 
                 </div>
             </div>
