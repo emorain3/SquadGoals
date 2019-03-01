@@ -13,26 +13,16 @@ import Card from './Card';
 ////////////// STYLING
 let PageContainer = styled.div`
     // border: solid green;
-    width: 100vw;
-    background-color: ivory;
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 3fr;
-    grid-template-areas: "sidenavbar banner"
-                         "sidenavbar imagegrid";
-    
-    padding-top: 3vw;
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 5vw;
 `
 
-let BannerImageShape = styled.img`
-    border-left: solid #222222 15vw;
-    border-right: solid #222222 15vw;
-    border-top: solid #222222 3vw;
-    margin-left: -8vw;
-    width: 80vw;
-    // height: 70vh;
-    grid-area: banner;
+let AddButton = styled.i`
+    margin-left: -15vw
+    margin-top: 5vw
 `
 
 
@@ -50,9 +40,7 @@ let PageText = styled.h1`
 class Homepage extends Component {
     state = {
         goal_list: [{}],
-    }
-
-    
+    } 
 
     showGoals = () => {
         axios.get('/api/').then((res) => {
@@ -83,7 +71,19 @@ class Homepage extends Component {
             <div>
                 <AppBanner/>
                 <Navbar/>
-                <Card/>
+
+                <PageContainer>
+                    {this.state.goal_list.map(goal => {
+                        return(
+                            <Card
+                            title={goal.title}
+                            description={goal.description}
+                            />
+                            )
+                        })}
+                <i style={{marginLeft: "-15vw", marginTop: "4vw"}} class="fas fa-plus-circle fa-7x"></i>
+                </PageContainer>
+
             </div>
         );
     }
