@@ -3,7 +3,7 @@ App for collaborative task and goal creation
 
 
 ### Installing
- - Web app accessible [here](https://squad-goals.herokuapp.com)! 
+ - Web app accessible [here](https://squad-goals-app.herokuapp.com)! 
 
 ### Technologies Used
 - [Vectr](http://vectr.com) - for wireframing and pre-planning.
