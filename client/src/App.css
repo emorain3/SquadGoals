@@ -13,3 +13,14 @@
     transform: rotate(360deg);
   }
 }
+
+
+input[type="text"], textarea, .input {
+
+  background-color : transparent; 
+  color: black;
+}
+
+.input:hover {
+  border: solid 1px aqua;
+}

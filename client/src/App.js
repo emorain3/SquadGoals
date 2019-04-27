@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import background_img from './images/cool_background_2.png'
 import HomePage from './components/Homepaage'
 import CalendarPage from './components/CalendarPage'
+import GoalPage from './components/GoalPage'
 
 
 
@@ -30,6 +31,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={HomePage} />
+            <Route exact path="/goal/:goalId" component={GoalPage} />
             <Route exact path="/calendar" component={CalendarPage} />
 
           </Switch>

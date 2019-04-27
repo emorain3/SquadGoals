@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import '../App.css';
 
 
 let FormStyled = styled.div`
@@ -8,11 +9,17 @@ let FormStyled = styled.div`
     background-color: transparent;
     
     margin-top: 2vw;
-    margin-left: 10vw;
-    width: 10vw;
-    box-shadow: 1px 1px 1px grey;
-`
+    margin-left: 2vw;
+    margin-right: 2vw;
+    
+    padding: 2vw;
 
+    width: 20vw;
+    box-shadow: 4px 10px 30px #001f3f;
+`
+let InputStyled = styled.input`
+    background-color: none;
+`
 
 class GoalForm extends Component {
 

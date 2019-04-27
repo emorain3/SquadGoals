@@ -15,11 +15,26 @@ let PageContainer = styled.div`
     // border: solid green;
 
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    // align-items: flex-start;
+    flex-wrap: wrap;
+
+    margin-top: 2vw;
+
+    height: auto;
+`
+
+let CardContainer = styled.div`
+    // border: solid red;
+    
+    display: flex;
     justify-content: center;
     align-items: space-evenly;
     flex-wrap: wrap;
-
-    margin-top: 5vw;
+    
+    // margin-top: 5vw;
+    max-width: 75vw;
 `
 
 let AddButton = styled.i`
@@ -75,19 +90,21 @@ class Homepage extends Component {
                 <Navbar/>
 
                 <PageContainer>
-                    {this.state.goal_list.map(goal => {
-                        return(
-                            <Card
-                            title={goal.title}
-                            description={goal.description}
-                            id={goal._id}
-                            showGoals={this.showGoals}
-                            />
-                            )
-                        })}
-                {/* <i style={{marginLeft: "-15vw", marginTop: "4vw"}} class="fas fa-plus-circle fa-7x"></i> */}
+                    <GoalForm showGoals={this.showGoals}/>
+                    <CardContainer>
+                        {this.state.goal_list.map(goal => {
+                            return(
+                                <Card
+                                title={goal.title}
+                                description={goal.description}
+                                id={goal._id}
+                                showGoals={this.showGoals}
+                                />
+                                )
+                            })}
+                    {/* <i style={{marginLeft: "-15vw", marginTop: "4vw"}} class="fas fa-plus-circle fa-7x"></i> */}
+                    </CardContainer>
                 </PageContainer>
-                <GoalForm showGoals={this.showGoals}/>
             </div>
         );
     }

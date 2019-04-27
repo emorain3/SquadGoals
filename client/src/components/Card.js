@@ -47,9 +47,11 @@ class Card extends Component {
                            
                             {/*  Edit Buttons */}
                             <EditButtonsContainer class="edit_button_container" >
-                                <Link to={'/'} >
+
+                                <Link to={`/goal/${this.props.id}`} >
                                     <i style={{color:"grey", marginLeft:"6vw", marginBottom:"0vw"}} class="fas fa-edit fa-2x"></i>
                                 </Link>
+                                
                                 <Link to={'/'} onClick={() => this.deleteGoal(this.props.id)} > 
                                     <i style={{color:"grey", marginLeft:"2vw", marginBottom:"0vw"}} class="fas fa-trash-alt fa-2x"></i>
                                 </Link> 
