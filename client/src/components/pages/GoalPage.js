@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
+// import { Link, Route } from "react-router-dom";
 
 
 
@@ -8,15 +8,15 @@ import { Link } from "react-router-dom";
 let BoxShadow = styled.section`
     box-shadow: 0 8px 6px -6px black;
 `
-
-
 let PageText = styled.h1`   
     font-family: 'Titillium Web', sans-serif;
     font-size: 6rem;
 `
 
 
-class AppBanner extends Component {
+
+
+class GoalPage extends Component {
     render() {
         return (
             <div>
@@ -24,10 +24,10 @@ class AppBanner extends Component {
                     <div className="hero-body">
                         <div className="container">
                         <PageText className="title">
-                            SquadGoals
+                            {this.props.location.title} Need to grab data from props -_-
                         </PageText>
                         <h2 className="subtitle">
-                            App for collaborative task and goal creation
+                            {this.props.location.description}
                         </h2>
                         </div>
                     </div>
@@ -42,4 +42,4 @@ class AppBanner extends Component {
 
 
 
-export default AppBanner;
+export default GoalPage;

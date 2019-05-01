@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components';
 
 import background_img from './images/cool_background_2.png'
-import HomePage from './components/Homepaage'
-import CalendarPage from './components/CalendarPage'
-import GoalPage from './components/GoalPage'
+import HomePage from './components/pages/Homepaage'
+import CalendarPage from './components/pages/CalendarPage'
+import GoalPage from './components/pages/GoalPage'
 
 
 
@@ -27,11 +27,10 @@ class App extends Component {
   render() {
     return (
       <PageContainer>
-        
         <Router>
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route exact path="/goal/:goalId" component={GoalPage} />
+            <Route exact path="/goal/:goalId" component={() => GoalPage} />
             <Route exact path="/calendar" component={CalendarPage} />
 
           </Switch>

@@ -23,15 +23,15 @@ class Navbar extends Component {
             <TransparentNav class="navbar is-transparent">
                 
 
-                <div class="navbar-menu">
-                    <div class="navbar-end">
-                        <Link class="navbar-item" to="/profile">
+                <div className="navbar-menu">
+                    <div className="navbar-end">
+                        <Link className="navbar-item" to="/profile">
                             <NavText>
                                 Profile
                             </NavText>
                         </Link>
 
-                        <Link class="navbar-item" to="/calendar">
+                        <Link className="navbar-item" to="/calendar">
                             <NavText>
                                 Calendar
                             </NavText>
