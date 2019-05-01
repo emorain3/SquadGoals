@@ -25,7 +25,9 @@
     "express": "^4.16.4",
     "mongoose": "^5.4.16",
     "nodemon": "^1.18.10",
-    "package.json": "^2.0.1"
+    "package.json": "^2.0.1",
+    "react-google-calendar-api": "^1.0.10"
+
   },
   "engines": {
     "node": "10.13.0"
