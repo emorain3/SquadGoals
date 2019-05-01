@@ -70,6 +70,13 @@ class Homepage extends Component {
         
     }
 
+    goToNextPage = () => {
+        this.props.history.push({
+          pathname: `/goal/:goal_id`,
+          state: { title: "Chicken Wing" }
+        });
+      }
+
     componentDidMount () {
         this.showGoals()
         
@@ -96,11 +103,7 @@ class Homepage extends Component {
                         {this.state.goal_list.map(goal => {
                             // Store the mapped list returned to a variable and render the variable here. THEN Access that list in the Route call.
                             return(
-                                <Link to={{ pathname: `/goal/${goal._id}`, state:{title: goal.title,
-                                                                                    description: goal.description,
-                                                                                    id: goal._id,
-                                                                                    showGoals: this.showGoals
-                                                                                }}} key={goal._id}> 
+                                <Link to={`/goal/${goal._id}`} key={goal._id} onClick={this.goToNextPage}> 
                                     <Card
                                     title={goal.title}
                                     description={goal.description}
