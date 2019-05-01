@@ -7,7 +7,7 @@ import AppBanner from '../elements/AppBanner'
 import Navbar from '../elements/Navbar'
 import Card from '../elements/Card';
 import GoalForm from '../elements/GoalForm'
-// import GoalPage from './GoalPage'
+import GoalPage from './GoalPage'
 // import CalendarPage from './CalendarPage'
 
 
@@ -70,13 +70,6 @@ class Homepage extends Component {
         
     }
 
-    goToNextPage = () => {
-        this.props.history.push({
-          pathname: `/goal/:goal_id`,
-          state: { title: "Chicken Wing" }
-        });
-      }
-
     componentDidMount () {
         this.showGoals()
         
@@ -103,7 +96,10 @@ class Homepage extends Component {
                         {this.state.goal_list.map(goal => {
                             // Store the mapped list returned to a variable and render the variable here. THEN Access that list in the Route call.
                             return(
-                                <Link to={`/goal/${goal._id}`} key={goal._id} onClick={this.goToNextPage}> 
+                                <Link to={{ pathname: `/goal/${goal._id}`, state:{title: goal.title,
+                                                                                    description: goal.description,
+                                                                                    id: goal._id,
+                                                                                }}} key={goal._id}> 
                                     <Card
                                     title={goal.title}
                                     description={goal.description}

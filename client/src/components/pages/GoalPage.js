@@ -10,7 +10,7 @@ let BoxShadow = styled.section`
 `
 let PageText = styled.h1`   
     font-family: 'Titillium Web', sans-serif;
-    font-size: 6rem;
+    font-size: 4vw;
 `
 
 
@@ -24,10 +24,10 @@ class GoalPage extends Component {
                     <div className="hero-body">
                         <div className="container">
                         <PageText className="title">
-                            {this.props.location.title} Need to grab data from props -_-
+                            {this.props.location.state.title}
                         </PageText>
                         <h2 className="subtitle">
-                            {this.props.location.description}
+                            {this.props.location.state.description}
                         </h2>
                         </div>
                     </div>
