@@ -1,37 +1,96 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 // import { Link, Route } from "react-router-dom";
+import Navbar from '../elements/Navbar'
+import GoalCard from '../elements/GoalCard';
+import GoalForm from '../elements/GoalForm'
+import AppBanner from '../elements/AppBanner';
 
 
+let PageContainer = styled.div`
+    // border: solid green;
 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    // align-items: flex-start;
+    flex-wrap: wrap;
 
-let BoxShadow = styled.section`
-    box-shadow: 0 8px 6px -6px black;
+    margin-top: 2vw;
+
+    height: auto;
 `
-let PageText = styled.h1`   
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 4vw;
-`
 
+let CardContainer = styled.div`
+    // border: solid red;
+    
+    display: flex;
+    justify-content: center;
+    align-items: space-evenly;
+    flex-wrap: wrap;
+    
+    // margin-top: 5vw;
+    max-width: 75vw;
+`
 
 
 
 class GoalPage extends Component {
+    
+    state = {
+        subgoal_list: [{}],
+    }
+
+    getUpdatedGoal = () => {
+        axios.get('/goal/:id').then((res) => {
+            console.log("This goal's data --> " + JSON.stringify(res.data))
+            this.setState({subgoal_list: res.data.subgoals})
+        }).then( () => {
+            // console.log("goal_list now looks like: " + this.state.goal_list)
+        })
+        
+    }
+
+    componentDidMount () {
+        this.getUpdatedGoal()
+        
+    }
+
+
     render() {
         return (
             <div>
-                <BoxShadow className="hero is-medium is-primary is-bold">
-                    <div className="hero-body">
-                        <div className="container">
-                        <PageText className="title">
-                            {this.props.location.state.title}
-                        </PageText>
-                        <h2 className="subtitle">
-                            {this.props.location.state.description}
-                        </h2>
-                        </div>
-                    </div>
-                </BoxShadow>
+            {/* BANNER */}
+                <AppBanner 
+                    title={this.props.location.state.title} 
+                    description={this.props.location.state.description} 
+                />
+
+            {/* NAVBAR */}
+                <Navbar/>
+
+            {/* FORM */}
+                <PageContainer>
+                    <GoalForm showGoals={this.getUpdatedGoal} post_path={"/api/goal/" + this.props.id + "/subgoal"} />
+               
+            {/* SUBGOALS */}
+                    <CardContainer>
+                        {this.state.subgoal_list.map(goal => {
+                            // Store the mapped list returned to a variable and render the variable here. THEN Access that list in the Route call.
+                            return(
+                                    <GoalCard
+                                        title={goal.title}
+                                        description={goal.description}
+                                        id={goal._id}
+                                        key={goal._id}
+                                        // showGoals={this.showGoals}
+                                    />
+                                )
+                            })}
+                    {/* <i style={{marginLeft: "-15vw", marginTop: "4vw"}} class="fas fa-plus-circle fa-7x"></i> */}
+                    </CardContainer>
+                </PageContainer>
             </div>
         );
     }

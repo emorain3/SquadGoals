@@ -23,10 +23,10 @@ class AppBanner extends Component {
                     <div className="hero-body">
                         <div className="container">
                         <PageText className="title">
-                            SquadGoals
+                            {this.props.title}
                         </PageText>
                         <h2 className="subtitle">
-                            App for collaborative task and goal creation
+                            {this.props.description}
                         </h2>
                         </div>
                     </div>

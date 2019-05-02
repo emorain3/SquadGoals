@@ -15,17 +15,17 @@ router.delete('/profile/:id', userController.delete);
 
 
 //  Goal Routes
-router.get('/goal/:id', goalController.show); // displays selected goal
+router.get('/goal/:id', goalController.show); // returns all data for selected goal 
 router.post('/goal', goalController.create);
 router.put('/goal/edit/:id', goalController.update);
 router.delete('/goal/:id', goalController.delete);
 
 
 // Subgoal routes
-router.get('/goal/:goalId/subgoal/:id', subgoalController.show); // displays selected goal
-router.post('/goal/:goalId/subgoal', subgoalController.create); // displays selected goal
-router.put('/subgoal/edit/:id', subgoalController.update); // displays selected goal
-router.delete('/subgoal/:id', subgoalController.delete); // displays selected goal
+router.get('/goal/:goalId/subgoal/:id', subgoalController.show); // returns all data for selected subgoal
+router.post('/goal/:goalId/subgoal', subgoalController.create); // creates new subgoal
+router.put('/subgoal/edit/:id', subgoalController.update); // updates selected subgoal
+router.delete('/subgoal/:id', subgoalController.delete); // deletes selected subgoal
 
 
 

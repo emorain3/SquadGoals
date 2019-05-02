@@ -18,8 +18,8 @@ const subgoalController = {
     },
 
     create: (req, res) =>{
-        let subGoalId = req.params.goalId
-        Goal.findById(subGoalId)
+        let parentGoalId = req.params.goalId
+        Goal.findById(parentGoalId)
         .then((goal)=>{
             console.log(goal)
             Subgoal.create(req.body)

@@ -23,7 +23,7 @@ let ZeroMargin = styled.div`
     margin: 0;
 `
 
-class Card extends Component {
+class GoalCard extends Component {
     
     deleteGoal = (id) => {
         console.log("deleteGoal() on" + id + "called")
@@ -42,13 +42,21 @@ class Card extends Component {
                     <CardStyled className="tile is-4 is-parent is-transparent">
                         
                         <ZeroMargin className="tile is-child box">
-                            <p className="title"> {this.props.title} </p>
+                            <Link to={{ pathname: `/goal/${this.props.id}`, state:{title: this.props.title,
+                                                                                    description: this.props.description,
+                                                                                    id: this.props.id,
+                                                                                }}}> 
+                                <p className="title"> {this.props.title} </p>
+                            </Link>
                             <p className="subtitle"> {this.props.description} </p>
                            
                             {/*  Edit Buttons */}
                             <EditButtonsContainer class="edit_button_container" >
 
-                                <Link to={`/goal/${this.props.id}`} >
+                                <Link to={{ pathname: `/goal/${this.props.id}`, state:{title: this.props.title,
+                                                                                    description: this.props.description,
+                                                                                    id: this.props.id,
+                                                                                }}}> 
                                     <i style={{color:"grey", marginLeft:"6vw", marginBottom:"0vw"}} class="fas fa-edit fa-2x"></i>
                                 </Link>
                                 
@@ -73,4 +81,4 @@ class Card extends Component {
 
 
 
-export default Card;
+export default GoalCard;

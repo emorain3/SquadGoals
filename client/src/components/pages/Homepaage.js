@@ -5,7 +5,7 @@ import { Link, Route } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import AppBanner from '../elements/AppBanner'
 import Navbar from '../elements/Navbar'
-import Card from '../elements/Card';
+import GoalCard from '../elements/GoalCard';
 import GoalForm from '../elements/GoalForm'
 import GoalPage from './GoalPage'
 // import CalendarPage from './CalendarPage'
@@ -62,7 +62,7 @@ class Homepage extends Component {
 
     showGoals = () => {
         axios.get('/api/').then((res) => {
-            // console.log("THE DATA I WANT TO PARSE --> " + JSON.stringify(res.data))
+            console.log("THE DATA I WANT TO PARSE --> " + JSON.stringify(res.data))
             this.setState({goal_list:res.data})
         }).then( () => {
             // console.log("goal_list now looks like: " + this.state.goal_list)
@@ -75,10 +75,6 @@ class Homepage extends Component {
         
     }
 
-    componentWillReceiveProps(nextProps) {
-        
-    }
-
 
     render() {
 
@@ -87,34 +83,29 @@ class Homepage extends Component {
         // console.log("image_objects IN PARENT are: " + JSON.stringify(this.state.image_objects))
         return (
             <div>
-                <AppBanner/>
+                <AppBanner
+                    title="SquadGoals"
+                    description="App for collaborative task and goal creation"
+                />
                 <Navbar/>
 
                 <PageContainer>
-                    <GoalForm showGoals={this.showGoals}/>
+                    <GoalForm showGoals={this.showGoals} post_path="/api/goal" />
                     <CardContainer>
                         {this.state.goal_list.map(goal => {
                             // Store the mapped list returned to a variable and render the variable here. THEN Access that list in the Route call.
                             return(
-                                <Link to={{ pathname: `/goal/${goal._id}`, state:{title: goal.title,
-                                                                                    description: goal.description,
-                                                                                    id: goal._id,
-                                                                                }}} key={goal._id}> 
-                                    <Card
+                                    <GoalCard
                                     title={goal.title}
                                     description={goal.description}
                                     id={goal._id}
                                     showGoals={this.showGoals}
                                     />
-                                </Link>
                                 )
                             })}
                     {/* <i style={{marginLeft: "-15vw", marginTop: "4vw"}} class="fas fa-plus-circle fa-7x"></i> */}
                     </CardContainer>
                 </PageContainer>
-                
-                {/* <Route exact path="/goal/:goalId" component={ GoalPage } /> */}
-                {/* <Route path="/calendar" component={CalendarPage} /> */}
 
             </div>
         );

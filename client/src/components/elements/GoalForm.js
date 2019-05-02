@@ -15,6 +15,7 @@ let FormStyled = styled.div`
     padding: 2vw;
 
     width: 20vw;
+    // height: 100vh;
     box-shadow: 4px 10px 30px #001f3f;
 `
 
@@ -37,12 +38,12 @@ class GoalForm extends Component {
       }
 
 
-      handleSubmit = (e) => {
+      handleSubmit = (e, path) => {
         e.preventDefault();
         // get our form data out of state
         const { title, description, image_url } = this.state;
 
-        axios.post('/api/goal', { title, description, image_url  } )
+        axios.post(path, { title, description, image_url  } )
           .then((result) => {
             console.log("successful delivery!")
             this.props.showGoals()
@@ -72,7 +73,7 @@ class GoalForm extends Component {
                         
                     
                         <div className="field">
-                            <button className="button is-link" onClick={this.handleSubmit}>Submit </button>
+                            <button className="button is-link" onClick={(e) => this.handleSubmit(e, this.props.post_path)}>Submit </button>
                         </div>
                     </form>
             </FormStyled>
