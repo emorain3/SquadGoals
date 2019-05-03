@@ -34,7 +34,7 @@ let CardContainer = styled.div`
     max-width: 75vw;
 `
 
-
+// TODO: iterate over subgoals and make API calls to get ALL SUBGOAL Info and populate the subgoal_list variable
 
 class GoalPage extends Component {
     
@@ -43,7 +43,7 @@ class GoalPage extends Component {
     }
 
     getUpdatedGoal = () => {
-        axios.get('/goal/:id').then((res) => {
+        axios.get(`/api/goal/${this.props.location.state.id}`).then((res) => {
             console.log("This goal's data --> " + JSON.stringify(res.data))
             this.setState({subgoal_list: res.data.subgoals})
         }).then( () => {
@@ -72,12 +72,12 @@ class GoalPage extends Component {
 
             {/* FORM */}
                 <PageContainer>
-                    <GoalForm showGoals={this.getUpdatedGoal} post_path={"/api/goal/" + this.props.id + "/subgoal"} />
+                    <GoalForm showGoals={this.getUpdatedGoal} post_path={`/api/goal/${this.props.location.state.id}/subgoal`} />
                
             {/* SUBGOALS */}
                     <CardContainer>
                         {this.state.subgoal_list.map(goal => {
-                            // Store the mapped list returned to a variable and render the variable here. THEN Access that list in the Route call.
+                            // Displays the subgoals in a card format
                             return(
                                     <GoalCard
                                         title={goal.title}

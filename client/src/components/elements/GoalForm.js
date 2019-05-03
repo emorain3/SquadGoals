@@ -42,7 +42,8 @@ class GoalForm extends Component {
         e.preventDefault();
         // get our form data out of state
         const { title, description, image_url } = this.state;
-
+        
+        console.log("path we're posting to " + path)
         axios.post(path, { title, description, image_url  } )
           .then((result) => {
             console.log("successful delivery!")

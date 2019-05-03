@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components';
 
 import background_img from './images/cool_background_2.png'
-import HomePage from './components/pages/Homepaage'
+import HomePage from './components/pages/Homepage'
 import CalendarPage from './components/pages/CalendarPage'
 import GoalPage from './components/pages/GoalPage'
 

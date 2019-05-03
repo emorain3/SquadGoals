@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Link, Route } from "react-router-dom";
-// import { Link } from "react-router-dom";
 import AppBanner from '../elements/AppBanner'
 import Navbar from '../elements/Navbar'
 import GoalCard from '../elements/GoalCard';
@@ -93,7 +92,7 @@ class Homepage extends Component {
                     <GoalForm showGoals={this.showGoals} post_path="/api/goal" />
                     <CardContainer>
                         {this.state.goal_list.map(goal => {
-                            // Store the mapped list returned to a variable and render the variable here. THEN Access that list in the Route call.
+                            
                             return(
                                     <GoalCard
                                     title={goal.title}
