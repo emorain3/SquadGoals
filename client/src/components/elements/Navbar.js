@@ -25,6 +25,12 @@ class Navbar extends Component {
 
                 <div className="navbar-menu">
                     <div className="navbar-end">
+                        <Link className="navbar-item" to="/">
+                            <NavText>
+                                Home
+                            </NavText>
+                        </Link>
+
                         <Link className="navbar-item" to="/profile">
                             <NavText>
                                 Profile
