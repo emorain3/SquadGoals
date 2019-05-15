@@ -1,5 +1,5 @@
 # SquadGoals
-App for collaborative task and goal creation
+Assistance app to maintain accountability and productivity when making collaborative and personal goals. *Will* Integrate with Google Calendar to provide push notifications to mobile devices.
 
 
 ### Installing
