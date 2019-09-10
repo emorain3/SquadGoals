@@ -2,7 +2,7 @@
 Assistance app to maintain accountability and productivity when making collaborative and personal goals. *Will* Integrate with Google Calendar to provide push notifications to mobile devices.
 
 
-### Installing
+### Installing / Accessing
  - Web app accessible [here](https://squad-goals-app.herokuapp.com)! 
 
 ### Technologies Used
